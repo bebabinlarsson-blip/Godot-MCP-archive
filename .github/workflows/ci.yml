@@ -77,6 +77,12 @@ jobs:
       - name: Install dependencies
         run: pip install -e ".[dev]"
 
+      - name: Godot Omni Diagnostics & Operations Gate
+        run: |
+          godot-omni self-test
+          godot-omni tools stats
+        shell: bash
+
       # Keep these conditions complementary so every matrix cell runs pytest
       # exactly once: with coverage on the Codecov cell, plain everywhere else.
       #

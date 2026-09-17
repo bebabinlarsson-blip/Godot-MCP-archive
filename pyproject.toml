@@ -94,6 +94,7 @@ build = [
 [project.scripts]
 godot-ai = "godot_ai:main"
 godot-omni = "godot_omni.cli:main"
+godot-mcp = "godot_omni.cli:main"
 
 [build-system]
 requires = ["setuptools==84.0.0"]
