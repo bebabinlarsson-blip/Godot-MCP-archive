@@ -15,9 +15,9 @@ const UpdateInstaller := preload("res://addons/godot_ai/utils/update_installer.g
 const LIVE_ADDON_ROOT := "res://addons/godot_ai"
 const PLUGIN_CFG := "res://addons/godot_ai/plugin.cfg"
 const MIN_GODOT_MAJOR := 4
-const MIN_GODOT_MINOR := 7
+const MIN_GODOT_MINOR := 1
 const UNSUPPORTED_GODOT_MESSAGE := \
-	"Godot AI v4 requires Godot 4.7 or newer in the 4.x line; plugin remains inactive."
+	"Godot Omni requires Godot 4.1 or newer in the 4.x line; plugin remains inactive."
 
 ## The lifecycle manager owns the serialized server episode and process
 ## authority. This root only captures its immutable launch plan and routes
@@ -379,6 +379,7 @@ func _continue_enter_tree_after_update_barrier() -> void:
 	_dispatcher.register_lazy_handler("tileset", HANDLERS_DIR + "tileset_handler.gd", [])
 	_dispatcher.register_lazy_handler("gridmap", HANDLERS_DIR + "gridmap_handler.gd", [undo])
 	_dispatcher.register_lazy_handler("csg", HANDLERS_DIR + "csg_handler.gd", [undo])
+	_dispatcher.register_lazy_handler("omni", HANDLERS_DIR + "omni_handler.gd", [undo, _connection])
 
 	_dispatcher.register_lazy("get_editor_state", "editor", &"get_editor_state")
 	_dispatcher.register_lazy("get_scene_tree", "scene", &"get_scene_tree")
@@ -525,6 +526,17 @@ func _continue_enter_tree_after_update_barrier() -> void:
 	_dispatcher.register_lazy("gridmap_list_library_items", "gridmap", &"list_library_items")
 	_dispatcher.register_lazy("csg_create", "csg", &"create")
 	_dispatcher.register_lazy("csg_set_operation", "csg", &"set_operation")
+	_dispatcher.register_lazy("omni_eval", "omni", &"omni_eval")
+	_dispatcher.register_lazy("editor_eval", "omni", &"omni_eval")
+	_dispatcher.register_lazy("omni_execute_script", "omni", &"omni_execute_script")
+	_dispatcher.register_lazy("reflection_call", "omni", &"reflection_call")
+	_dispatcher.register_lazy("reflection_get", "omni", &"reflection_get")
+	_dispatcher.register_lazy("reflection_set", "omni", &"reflection_set")
+	_dispatcher.register_lazy("reflection_inspect", "omni", &"reflection_inspect")
+	_dispatcher.register_lazy("reflection_instantiate", "omni", &"reflection_instantiate")
+	_dispatcher.register_lazy("ui_semantic_tree", "omni", &"ui_semantic_tree")
+	_dispatcher.register_lazy("ui_click_control", "omni", &"ui_click_control")
+	_dispatcher.register_lazy("ui_type_text", "omni", &"ui_type_text")
 
 	_connection.dispatcher = _dispatcher
 	add_child(_connection)

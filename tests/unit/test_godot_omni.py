@@ -381,3 +381,57 @@ def test_cli_versions_status():
 def test_cli_self_test():
     code = main(["self-test", "--json"])
     assert code == 0
+
+
+# ==============================================================================
+# 11. Godot Omni Server & Plugin Architecture
+# ==============================================================================
+
+def test_omni_server_creation_and_tools():
+    import asyncio
+    from godot_omni.server import create_omni_server
+
+    server = create_omni_server()
+    assert server.name == "Godot Omni"
+
+    tools = asyncio.run(server.list_tools())
+    tool_names = {t.name for t in tools}
+
+    expected_tools = {
+        "godot_eval",
+        "godot_execute",
+        "godot_search",
+        "godot_describe",
+        "reflection_call",
+        "reflection_get",
+        "reflection_set",
+        "reflection_inspect",
+        "ui_semantic_tree",
+        "ui_click",
+        "ui_type",
+        "godot_status",
+    }
+    assert expected_tools.issubset(tool_names)
+
+
+def test_godot_plugin_files_exist():
+    from pathlib import Path
+
+    repo_root = Path(__file__).resolve().parent.parent.parent
+    plugin_omni = repo_root / "plugin" / "addons" / "godot_omni"
+    plugin_ai = repo_root / "plugin" / "addons" / "godot_ai"
+
+    # Verify godot_omni addon files
+    assert (plugin_omni / "plugin.cfg").is_file()
+    assert (plugin_omni / "plugin.gd").is_file()
+    assert (plugin_omni / "omni_dock.gd").is_file()
+    assert (plugin_omni / "omni_reflection.gd").is_file()
+    assert (plugin_omni / "omni_ui_tree.gd").is_file()
+
+    # Verify omni_handler in godot_ai addon
+    omni_handler = plugin_ai / "handlers" / "omni_handler.gd"
+    assert omni_handler.is_file()
+    content = omni_handler.read_text(encoding="utf-8")
+    assert "func omni_eval(" in content
+    assert "func reflection_call(" in content
+    assert "func ui_semantic_tree(" in content

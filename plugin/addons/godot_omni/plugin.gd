@@ -7,16 +7,15 @@ extends EditorPlugin
 
 const OmniReflection := preload("res://addons/godot_omni/omni_reflection.gd")
 const OmniUiTree := preload("res://addons/godot_omni/omni_ui_tree.gd")
+const OmniDockScript := preload("res://addons/godot_omni/omni_dock.gd")
 
 var _dock: Control
 
 
 func _enter_tree() -> void:
 	print("[Godot Omni] Initializing Universal Godot AI MCP plugin v5.0.0...")
-	# Add a lightweight dock status indicator
-	_dock = Label.new()
-	_dock.text = "Godot Omni: Active (1,763 Canonical Ops)"
-	_dock.name = "Omni"
+	_dock = OmniDockScript.new()
+	_dock.name = "Godot Omni"
 	add_control_to_bottom_panel(_dock, "Godot Omni")
 	print("[Godot Omni] Ready. Canonical operations available: 1,763.")
 
