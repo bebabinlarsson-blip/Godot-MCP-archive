@@ -1,9 +1,9 @@
 # Godot Omni — Tool & Operation Coverage Report
 
-**Total Canonical Operations**: **1,763**  
+**Total Canonical Operations**: **1,776**  
 **Required Minimum**: **1,500**  
-**Margin**: **+263 operations (117.5% of target)**  
-**Distinct Engine Domains**: **58**  
+**Margin**: **+276 operations (118.4% of target)**  
+**Distinct Engine Domains**: **59**  
 
 ---
 
@@ -13,10 +13,10 @@ Godot Omni's operations are divided across 5 layers:
 
 ```
 +-------------------------------------------------------------------------+
-|                  GODOT OMNI CANONICAL OPERATIONS (1,763)                |
+|                  GODOT OMNI CANONICAL OPERATIONS (1,776)                |
 +-------------------------------------------------------------------------+
 | Layer A: Curated Core & Engine Operations          |  262 operations    |
-| Layer B: Generated ClassDB Reflection Ops          | 1,370 operations    |
+| Layer B: Generated ClassDB Reflection Ops          | 1,383 operations    |
 | Layer C: Universal Object Reflection (obj://)      |   11 operations    |
 | Layer D: Semantic Editor UI Automation             |   54 operations    |
 | Layer E: Runtime Execution, Debug & Sampling       |   66 operations    |

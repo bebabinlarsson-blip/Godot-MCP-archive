@@ -365,6 +365,9 @@ def generate_classdb_operations() -> list[CanonicalOperation]:
         ("Engine", "system", ["get_frames_per_second", "get_physics_frames", "get_process_frames", "get_time_scale", "set_time_scale", "is_editor_hint"]),
         ("Time", "system", ["get_ticks_msec", "get_ticks_usec", "get_unix_time_from_system", "get_datetime_dict_from_system"]),
         ("OS", "system", ["get_name", "get_processor_count", "get_system_time_msecs", "get_environment", "has_feature"]),
+        # Godot 4.8 Dev additions: Trail3D and Texture Streaming
+        ("Trail3D", "node3d", ["set_material", "get_material", "set_segments", "get_segments", "set_lifetime", "get_lifetime", "set_width", "get_width", "clear_points"]),
+        ("Texture2D", "texture", ["set_streaming", "is_streaming", "set_streaming_quality", "get_streaming_quality"]),
     ]
 
     for class_name, domain, method_names in additional_classes:

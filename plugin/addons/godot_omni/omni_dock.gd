@@ -30,7 +30,9 @@ func _build_ui() -> void:
 	header.add_child(title)
 
 	var version_badge := Label.new()
-	version_badge.text = "v5.0.0"
+	var engine_info: Dictionary = Engine.get_version_info()
+	var engine_str: String = str(engine_info.get("string", "4.x"))
+	version_badge.text = "v5.0.0 (Godot %s)" % engine_str
 	version_badge.modulate = Color(0.4, 0.8, 1.0)
 	header.add_child(version_badge)
 	add_child(header)
@@ -51,7 +53,7 @@ func _build_ui() -> void:
 
 	# Stats Section
 	stats_label = Label.new()
-	stats_label.text = "Canonical Operations: 1,763  |  Domains: 58\nUniversal Reflection: Active  |  UI Automation: Active"
+	stats_label.text = "Canonical Operations: 1,776  |  Domains: 59\nUniversal Reflection: Active  |  UI Automation: Active"
 	stats_label.modulate = Color(0.85, 0.85, 0.85)
 	add_child(stats_label)
 

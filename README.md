@@ -5,32 +5,32 @@
 # Godot MCP (Godot Omni)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Godot Engine](https://img.shields.io/badge/Godot-4.1%20to%204.7+-478CBF?logo=godotengine&logoColor=white)](https://godotengine.org)
+[![Godot Engine](https://img.shields.io/badge/Godot-4.1%20to%204.8+%20(dev)-478CBF?logo=godotengine&logoColor=white)](https://godotengine.org)
 [![MCP Protocol](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-8A2BE2)](https://modelcontextprotocol.io)
-[![Operations](https://img.shields.io/badge/Operations-1%2C763%20Canonical-brightgreen)](reports/tool-coverage.md)
-[![Domains](https://img.shields.io/badge/Domains-58%20Engine%20Domains-success)](reports/tool-coverage.md)
+[![Operations](https://img.shields.io/badge/Operations-1%2C776%20Canonical-brightgreen)](reports/tool-coverage.md)
+[![Domains](https://img.shields.io/badge/Domains-59%20Engine%20Domains-success)](reports/tool-coverage.md)
 [![Python](https://img.shields.io/badge/Python-3.11%20|%203.12%20|%203.13%20|%203.14-blue?logo=python&logoColor=white)](pyproject.toml)
 [![AI Clients](https://img.shields.io/badge/AI%20Clients-12%20Supported-orange)](reports/client-compatibility.md)
 
 **Godot MCP** is the next-generation Model Context Protocol (MCP) server and official editor plugin for the [Godot Engine](https://godotengine.org). It empowers AI coding agents (including Google Antigravity, Claude Code, Cursor, Windsurf, VS Code, Cline, Roo Code, and OpenAI Codex) with complete, native, in-editor omnipotence over Godot.
 
-Where legacy implementations offer ~40 basic operations, Godot MCP provides **1,763 canonical operations** across **58 engine domains**, arbitrary live GDScript evaluation (`godot_eval`), stateful object reflection (`obj://session/id`), semantic UI control tree automation, and adaptive tool exposure.
+Where legacy implementations offer ~40 basic operations, Godot MCP provides **1,776 canonical operations** across **59 engine domains**, arbitrary live GDScript evaluation (`godot_eval`), stateful object reflection (`obj://session/id`), semantic UI control tree automation, and adaptive tool exposure.
 
 ---
 
 ## ⚡ Key Highlights
 
-* 🎮 **1,763 Canonical Engine Operations**: Complete coverage spanning 2D/3D physics, rendering, shaders, materials, skeletal animations, particles, audio buses, tilemaps, gridmaps, CSG modeling, navigation meshes, UI controls, project settings, scene composition, and dynamic ClassDB discovery.
+* 🎮 **1,776 Canonical Engine Operations**: Complete coverage spanning 2D/3D physics, rendering, shaders, materials, skeletal animations, particles, audio buses, tilemaps, gridmaps, CSG modeling, navigation meshes, UI controls, project settings, scene composition, Trail3D, texture streaming, and dynamic ClassDB discovery.
 * 🧠 **Adaptive Tool Exposure Engine**: Seamlessly overcomes LLM context bloat and hard tool caps (such as Antigravity's 100-tool limit) using 5 distinct exposure strategies:
   * `AUTO`: Automatically detects connected client capabilities and selects optimal density.
-  * `FULL`: Exposes all 1,763 granular tools for agents supporting unbounded tool catalogs.
+  * `FULL`: Exposes all 1,776 granular tools for agents supporting unbounded tool catalogs.
   * `DOMAIN`: Groups operations into 61 high-level domain rollups (fits comfortably within 100-tool limits).
   * `LAZY`: Provides 33 core operational tools and discovers remaining tools on demand.
   * `ROUTER`: Minimal 4-tool interface (`omni_execute`, `omni_search`, `omni_describe`, `omni_stats`) with sub-millisecond p50 dispatch.
 * ⚡ **Arbitrary GDScript Omnipotence (`godot_eval` / `omni_eval`)**: Execute ephemeral `@tool` GDScript directly inside the running Godot editor with full access to `EditorInterface`, `ProjectSettings`, singletons, and ClassDB without leaving residual files.
 * 🔍 **Universal Object Reflection (`obj://session/id`)**: Stateful handle management with generational safety counters, cycle detection, and bidirectional serialization across all 38+ Godot Variant types.
 * 🖱 **Semantic UI Automation**: Autonomous editor control tree inspection, widget traversal, button clicking, text input, and keyboard shortcut dispatch.
-* 🔄 **Broad Version Compatibility**: Zero-regression support from Godot 4.1 through Godot 4.7+.
+* 🔄 **Broad Version Compatibility**: Zero-regression support from Godot 4.1 through Godot 4.8+ (including active Godot 4.8 development snapshots).
 * 🤖 **12 Supported AI Clients**: One-command automatic configuration for Antigravity, Claude Code, Claude Desktop, Cursor, Windsurf, VS Code, Cline, Roo Code, OpenAI Codex, OpenCode, Zed, and Gemini CLI.
 
 ---
@@ -38,7 +38,7 @@ Where legacy implementations offer ~40 basic operations, Godot MCP provides **1,
 ## 🚀 Quick Start
 
 ### 1. Requirements
-* **Godot Engine**: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, or 4.7+
+* **Godot Engine**: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, or 4.8+ (including 4.8 dev snapshots)
 * **Python**: 3.11 – 3.14
 * **Astral uv** (recommended) or `pip`
 
@@ -200,7 +200,7 @@ godot-omni benchmark memory                  # Monitor memory consumption and ha
 # 4. Diagnostics & Health
 godot-omni doctor                            # Full diagnostics: Python, Godot, network, registry
 godot-omni self-test                         # 8-point in-process integration test
-godot-omni versions status                   # Godot 4.1 – 4.7+ compatibility breakdown
+godot-omni versions status                   # Godot 4.1 – 4.8+ compatibility breakdown
 ```
 
 ---

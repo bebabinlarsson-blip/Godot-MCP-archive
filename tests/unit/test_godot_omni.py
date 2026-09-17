@@ -324,6 +324,7 @@ def test_version_compatibility_matrix():
     assert "4.5.x" in versions
     assert "4.6.x" in versions
     assert "4.7+" in versions
+    assert "4.8 (dev)" in versions
 
 
 # ==============================================================================

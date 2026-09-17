@@ -1,7 +1,7 @@
 # Godot Omni — Godot Engine Version Compatibility Report
 
-**Supported Godot Line**: Godot 4.1 through Godot 4.7+  
-**Target Recommendation**: **Godot 4.7+**  
+**Supported Godot Line**: Godot 4.1 through Godot 4.8+ (including active 4.8 dev builds)  
+**Target Recommendation**: **Godot 4.7+ / Godot 4.8 (dev)**  
 **Local Installed Configurations Detected**: **Godot 4.7, Godot 4.8**  
 
 ---
@@ -16,7 +16,8 @@
 | **4.4.x** | Supported | Typed Variant Reflection | Semantic Control Tree + Shortcuts | Typed Dictionaries, Jolt Physics Integration, Lightmap Bicubic |
 | **4.5.x** | Supported | Universal Object Reflection (`obj://`) | Full Semantic UI Tree + Shortcuts | Modern Rendering Pipelines, Shader Global Buffers, Audio Effect Graphs |
 | **4.6.x** | Supported | Universal Object Reflection (`obj://`) | Semantic UI Tree + Native Fallback | Advanced NavigationServer3D, Async Asset Pipeline, Threaded Node Loading |
-| **4.7+** | **Fully Supported (Recommended)** | **Universal Reflection + Gen Tracking** | **Full Semantic UI Tree + OS Accessibility** | **1,500+ Canonical Ops, Universal Object Reflection, Semantic UI Tree, All 38+ Variant Types** |
+| **4.7.x** | Supported (Stable) | Universal Reflection + Gen Tracking | Full Semantic UI Tree + OS Accessibility | 1,500+ Canonical Ops, Universal Object Reflection, Semantic UI Tree, All 38+ Variant Types |
+| **4.8 (dev)** | **Fully Supported (Active Dev)** | **Universal Reflection + Gen Tracking + Dynamic ClassDB** | **Full Semantic UI Tree + Multi-Window + Accessibility API** | **Texture Streaming, Trail3D, Next-Gen Multi-Viewport, Dynamic ClassDB 4.8, Ephemeral GDScript Omnipotence, Modern GDScript Analyzer** |
 
 ---
 

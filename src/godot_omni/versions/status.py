@@ -70,11 +70,27 @@ VERSION_MATRIX: list[VersionCompatibility] = [
     ),
     VersionCompatibility(
         version="4.7+",
-        status="Fully Supported (Recommended)",
+        status="Supported (Stable)",
         core_features=["1,500+ Canonical Ops", "Universal Object Reflection", "Semantic UI Tree", "All 38+ Variant Types"],
         reflection_tier="Universal Object Reflection + Gen Tracking",
         ui_automation="Full Semantic UI Tree + OS Accessibility",
-        notes="Primary target for Godot Omni with 100% engine coverage.",
+        notes="Production 4.7 baseline with complete engine coverage.",
+    ),
+    VersionCompatibility(
+        version="4.8 (dev)",
+        status="Fully Supported (Active Dev)",
+        core_features=[
+            "Texture Streaming",
+            "Trail3D",
+            "Next-Gen Multi-Viewport",
+            "Dynamic ClassDB 4.8",
+            "Ephemeral GDScript Omnipotence",
+            "Semantic Control Tree",
+            "Modern GDScript Analyzer",
+        ],
+        reflection_tier="Universal Object Reflection + Gen Tracking + Dynamic ClassDB",
+        ui_automation="Full Semantic UI Tree + Multi-Window + Accessibility API",
+        notes="Direct first-class support for Godot 4.8 development builds (dev snapshots), Texture Streaming, Trail3D, and updated ClassDB.",
     ),
 ]
 
@@ -109,6 +125,6 @@ def get_version_status() -> dict[str, Any]:
     ]
     return {
         "detected_local_versions": installed,
-        "recommended_version": "4.7+",
+        "recommended_version": "4.7+ / 4.8 (dev)",
         "matrix": matrix_data,
     }
