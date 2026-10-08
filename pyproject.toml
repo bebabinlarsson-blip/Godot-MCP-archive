@@ -41,7 +41,7 @@ dependencies = [
     # contract explicit instead of inheriting FastMCP's transitive choice.
     "anyio==4.14.2",
     "mcp==1.29.1",
-    "websockets==17.1",
+    "websockets==17.2",
     "pydantic==2.13.5",
     # The attach bridge uses AsyncClient, transport errors, and granular
     # connect/read/write/pool timeouts directly. Do not rely on FastMCP's
